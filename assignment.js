@@ -1,4 +1,4 @@
-
+// https://github.com/ImMohin/Assignment
 
 // Problem No 1: kilometerToMeter
 // input kilo meter calculate Meter. 
@@ -52,8 +52,6 @@ console.log(totalResult);
 
 
 
-
-
 // Problem No-3: hotelCost
 
 function hotelCost(dayCount){
@@ -86,8 +84,6 @@ function hotelCost(dayCount){
 
 var totalBill = hotelCost(21);
 console.log(totalBill);
-
-
 
 
 // Problem No-4: megaFriend
