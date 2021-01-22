@@ -1,13 +1,15 @@
 
-/** 
-// Problem No 1: kilometer To Meter 
+
+// Problem No 1: kilometerToMeter
+// input kilo meter calculate Meter. 
+// 1Km = 1000m
 function kilometerToMeter(kiloMeter) {
     var kiloMeter;
     if (kiloMeter == 0) {
         console.log("Distance 0 Kilo meter calculate is not possible");
     }
     else if(kiloMeter < 0 ){
-        console.log("Negative number is not allowed");
+        console.log("Distance is not allowed negative Number");
     }
     else {
         // we know 1Kilo Meter = 1000 meter 
@@ -16,15 +18,41 @@ function kilometerToMeter(kiloMeter) {
     }
 
 }
-var resultMeter = kilometerToMeter(-4);
+var resultMeter = kilometerToMeter(1);
 console.log(resultMeter);
 
-*/
-
-// Problem No-2:  
 
 
-/** 
+// Problem No-:2
+// Given all product price. induvidually multiply product price and  summation all total Cost 
+
+function budgetCalculator(watch , phone , laptop){
+    //decalre all varialbe price 
+    var perWatchPrice = 50;
+    var perPhonePrice = 100;
+    var perLaptopPrice = 500;
+    //checking all product quantity by if else condition
+    if( watch < 0 || phone < 0 || laptop < 0){
+        console.log("invalid item");
+    }else if( watch >= 0 || phone >= 0 || laptop >= 0){
+        var totalCost = watch*perWatchPrice + phone*perPhonePrice + laptop*perLaptopPrice;
+    }else{
+        console.log("input error");
+    }
+    //return total cost
+    if(totalCost){
+        return totalCost;
+    }else{
+        console.log("error missing");
+    }
+    // return totalCost ? totalCost : "error";
+}
+var totalResult = budgetCalculator(0,5,1);   //function called 
+console.log(totalResult);
+
+
+
+
 
 // Problem No-3: hotelCost
 
@@ -33,14 +61,12 @@ function hotelCost(dayCount){
     var dayCount;
     var totalCost=0;
 
-    if(dayCount < 0){
+    if(dayCount <= 0){
         console.log("Total day count zero or negative number are not allowed");
     }
     else if(dayCount <= 10){
         // 1th to 10th day perDay 100tk cost 
-        // var firstTenDayCost = dayCount*perDay;
         totalCost = dayCount*perDay;
-        console.log("test");
     }
     // 11th day to 20th day per day cost 80tk . (20% disscount)
     else if(dayCount <= 20){
@@ -61,32 +87,29 @@ function hotelCost(dayCount){
 var totalBill = hotelCost(21);
 console.log(totalBill);
 
-*/
 
 
 
-// per watch = 50 , phone = 100 , laptop = 500 tk
+// Problem No-4: megaFriend
+// create Array name list and access by loop 
+// individually checking  max string by if else conditon 
 
-function budgetCalculator(watch , phone , laptop){
-    var perWatchPrice = 50;
-    var perPhonePrice = 100;
-    var perLaptopPrice = 500;
-    if( watch < 0 || phone < 0 || laptop < 0){
-        console.log("invalid item");
+function megaFriend(nameList) {
+    if (nameList == "") {
+        return "Name List should not be empty.";
+    } else {
+        var maxName = nameList[0];
+        for (var i = 0; i < nameList.length; i++) {
+            var element = nameList[i];
+            if (element.length > maxName.length) {
+                maxName = element;
+            }
+        }
+        return maxName;
     }
-    else if( watch >= 0 || phone >= 0 || laptop >= 0){
-        var totalCost = watch*perWatchPrice + phone*perPhonePrice + laptop*perLaptopPrice;
-    }
-    else{
-        console.log("input error");
-    }
-    if(totalCost){
-        return totalCost;
-    }else{
-        console.log("error missing");
-    }
-    // return totalCost ? totalCost : "error";
+
 }
-var totalResult = budgetCalculator(0,5);
-console.log(totalResult);
+var nameList = ["mohin", "Ala uddin", "karimuddin", "kazi zia uddin Alo", "akmal uddin"];
+var result = megaFriend(nameList);
+console.log(result);
 
