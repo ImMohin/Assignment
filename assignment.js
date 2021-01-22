@@ -24,32 +24,32 @@ console.log(resultMeter);
 // Problem No-2:  
 
 
-
 /** 
+
 // Problem No-3: hotelCost
 
 function hotelCost(dayCount){
     var perDay=100;
     var dayCount;
-    var totalCost;
+    var totalCost=0;
 
     if(dayCount < 0){
         console.log("Total day count zero or negative number are not allowed");
     }
     else if(dayCount <= 10){
         // 1th to 10th day perDay 100tk cost 
-        var firstTenDayCost = dayCount*perDay;
+        // var firstTenDayCost = dayCount*perDay;
         totalCost = dayCount*perDay;
-        
+        console.log("test");
     }
     // 11th day to 20th day per day cost 80tk . (20% disscount)
     else if(dayCount <= 20){
-        totalCost = 1000 + (dayCount-10) *(perDay- ((perDay*20)/100));
+        totalCost = (10*perDay) + (dayCount-10) *(perDay- ((perDay*20)/100));
         
     }
     // 21th day above per day cost 50tk or 50% discount
     else if(dayCount >= 21){
-       totalCost = 1800 + (dayCount-20) *(perDay- ((perDay*50)/100)); 
+       totalCost = (10*perDay)+(10*(perDay-((perDay*20)/100))) + (dayCount-20) *(perDay- ((perDay*50)/100)); 
     }
     else{
         console.log("Invalid input");
@@ -58,10 +58,11 @@ function hotelCost(dayCount){
     
 }
 
-var totalBill = hotelCost(30);
+var totalBill = hotelCost(21);
 console.log(totalBill);
 
 */
+
 
 
 // per watch = 50 , phone = 100 , laptop = 500 tk
@@ -79,7 +80,13 @@ function budgetCalculator(watch , phone , laptop){
     else{
         console.log("input error");
     }
-    return totalCost;
+    if(totalCost){
+        return totalCost;
+    }else{
+        console.log("error missing");
+    }
+    // return totalCost ? totalCost : "error";
 }
-var totalResult = budgetCalculator(0,0);
+var totalResult = budgetCalculator(0,5);
 console.log(totalResult);
+
